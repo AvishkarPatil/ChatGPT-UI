@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>ChatGPT</title>
+      <link href="style.css" rel="stylesheet">
+      <link rel="shortcut icon" href="./static/images/favicon.png" type="image/x-icon">
+   </head>
+   <body>
+      <main>
+         <div class="top-buttons-container" >
+            <div class="collapse-button-container" onclick="toggleSidebar()">
+               <button type="">
+               <img class="img" src="static/images/collapse.svg" alt="">
+               </button>
+            </div>
+            <div class="new-prompt-button-container">
+               <button type=""> <img src="static/images/new-prompt.svg" alt=""></button>
+            </div>
+         </div>
+         <div class="sidebar">
+            <div class="scrollable-container">
+               <div class="links-section">
+                  <div class="sidebar-link">
+                     <div class="link-left-section">
+                        <img src="./static/images/logo.svg" alt="">
+                        <p>ChatGPT</p>
+                     </div>
+                     <div class="link-right-section">
+                        <button class="link-right-button"><img title="new chat" src="./static/images/new-chat.svg" alt=""></button>
+                     </div>
+                  </div>
+                  <div class="sidebar-link">
+                     <div class="link-left-section">
+                        <img src="./static/images/explore-gpts.svg" alt="">
+                        <p>Explore GPTs</p>
+                     </div>
+                     <div class="link-right-section">
+                        <button class="link-right-button"><img src="./static/images/new-chat.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="yesterday-section">
+                  <p class="sidebar-section-title">Yesterday</p>
+                  <div class="sidebar-link">
+                     <div class="link-left-section">
+                        <p>Something in Past</p>
+                     </div>
+                     <div class="link-right-section">
+                        <button class="link-right-button"><img src="./static/images/options.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="previous-seven-days-section">
+                  <p class="sidebar-section-title">Previous 7 days</p>
+                  <div class="sidebar-link">
+                     <div class="link-left-section">
+                        <p>Something in Past</p>
+                     </div>
+                     <div class="link-right-section">
+                        <button class="link-right-button"><img src="./static/images/options.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="previous-thirty-days-section">
+                  <p class="sidebar-section-title">Previous 30 Days</p>
+                  <div class="sidebar-link">
+                     <div class="link-left-section">
+                        <p>Something in Past</p>
+                     </div>
+                     <div class="link-right-section">
+                        <button class="link-right-button"><img src="./static/images/options.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom-button-container">
+               <div class="sidebar-link">
+                  <div class="link-left-section">
+                     <img src="./static/images/upgrade.svg" alt="">
+                     <div class="bottom-second">
+                        <p id="bottom-button-title">Upgrade Plan</p>
+                        <p id="bottom-button-subtitle">More access to the best models</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- main body  -->
+         <div class="main-body">
+            <!-- top buttons -->
+            <div class="top-buttons">
+               <div class="top-buttons-left-section" id="chatgpt-dropdown-button" onclick="chatgptToggleDropdown()" >
+                  <p class="button-text">ChatGPT</p>
+                  <img  src="./static/images/down-arrow.svg" alt="">
+                  <div class="dropdown-menu" id="dropdown-menu-chatgpt">
+                     <div class="dropdown-link">
+                        <img src="./static/images/chatgptplus.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">ChatGPT Plus</p>
+                           <p class="dropdown-link-subtitle">Our smartest model & more</p>
+                        </div>
+                        <button class="dropdown-link-button" id="upgrade-button">Upgrade</button>
+                     </div>
+                     <div class="dropdown-link">
+                        <img src="./static/images/everydaytask.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">ChatGPT </p>
+                           <p class="dropdown-link-subtitle">Great for everyday tasks</p>
+                        </div>
+                        <button> <img src="./static/images/tikmark.svg" alt="">
+                        </button>
+                     </div>
+                     <hr>
+                     <div class="dropdown-link">
+                        <img src="./static/images/temporarychat.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">Temporary Chat</p>
+                        </div>
+                        <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="profile-section" onclick="profileToggleDropdown()">
+                  <button id="profile-pic-button"> <img src="./static/images/profile-pic.png" alt=""></button>
+                  <div class="dropdown-menu" id="dropdown-menu-profile">
+                     <div class="dropdown-link">
+                        <img src="./static/images/mygpts.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">My GPTs</p>
+                        </div>
+                     </div>
+                     <div class="dropdown-link">
+                        <img src="./static/images/customize-chatgpt.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">Customize ChatGPT </p>
+                        </div>
+                     </div>
+                     <div class="dropdown-link">
+                        <img src="./static/images/settings.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">Settings </p>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="dropdown-link">
+                        <img src="./static/images/upgrade-plan.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">Upgrade Plan </p>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="dropdown-link">
+                        <img src="./static/images/logout.svg" alt="">
+                        <div class="dropdown-link-text-container">
+                           <p class="dropdown-link-title">Log out</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- banner section -->
+            <div class="banner-section">
+               <div class="banner-image">
+                  <img src="./static/images/logo.svg" alt="">
+               </div>
+               <div class="banner-cards-section">
+                  <div class="banner-card">
+                     <img src="./static/images/create-cartoon.svg" alt="">
+                     <p>Create a Renaissance-style painting</p>
+                  </div>
+                  <div class="banner-card">
+                     <img src="./static/images/summarize-document.svg" alt="">
+                     <p>Summarize a long STory</p>
+                  </div>
+                  <div class="banner-card">
+                     <img src="./static/images/write-report.svg" alt="">
+                     <p>Morning routine for productivity</p>
+                  </div>
+                  <div class="banner-card">
+                     <img src="./static/images/content-calendar.svg" alt="">
+                     <p>Thank my interviewe</p>
+                  </div>
+               </div>
+            </div>
+            <!-- bottom bar -->
+            <div class="bottom-bar">
+               <div class="bottom-bar-top">
+                  <div class="attachment-section">
+                     <img src="./static/images/attachments.svg" alt="">
+                  </div>
+                  <div class="input-section">
+                     <input type="text" placeholder="Message ChatGPT">
+                  </div>
+                  <div class="submit-section">
+                     <img src="./static/images/submit.svg" alt="">
+                  </div>
+               </div>
+               <div class="bottom-bar-bottom">
+                  <p>ChatGPT can make mistakes. Check important info.</p>
+               </div>
+            </div>
+         </div>
+      </main>
+      <script src="script.js"></script>
+      </body 
+</html>
